@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head></head>
+<body>
+<h1><big><big><big><span style="font-size: x-large;"><strong>Welcome to <span style="text-decoration: underline;">FoxTrotUpscaler</span></strong></span></big></big></big></h1>
+<p class="western" align="left">Developed by:
+Christian77777&nbsp;</p>
+<h2>Purpose</h2>
+<p class="western" style="padding-left: 30px;" align="left">This program is a controller to efficiently use
+FFMPEG, Waifu2x-caffe, and RawTherapee together to create a upscaled
+video. While you could easily replace the main functionality of this
+program with a batch script, it leaves a lot to be desired. Due to the
+time consuming nature of this process, this program aims to get started
+upscaling quickly, automate the process for multiple queued videos,
+provide basic statistics for the speed your computer hardware upscales,
+and provide some remote monitoring over your clients. For upscaling
+only a video occasionally, this may not feel so useful. For a whole
+team attempting to upscale entire TV shows on multiple computers, the
+extra tools offered should make a world of a difference.</p><h2>Method Explanation</h2>
+<p style="padding-left: 30px;">FoxTrotUpscaler (FTU)
+renders videos in what seems like a extremely inefficient way. However,
+on the right videos, it works great, and is completely free. Recent
+breakthroughs in Computer Science have created algorithms that are
+capable of upscaling video with a reasonable degree of accuracy to a
+significantly higher resolution. There is some complex stuff going on
+in this process that even I don't quite understand myself, but the
+program Waifu2x-caffe, is able to take a photo, and upscale it guessing
+a fair bit of detail correctly. But it only is usable on photos, which
+is a obviously not video. So FTU uses FFMPEG, to decompress a video
+into each of its individual frames, process them all with the
+algorithm, and re-compress it all into a video. Also, since you are
+going to have all the photos there, the program gives the option to run
+the frames through RawTherapee, if you wanted to do some extra general
+touch-ups on the frames. Thats it, the video can then be combined with
+audio, subtitles, and meta data that the user choses to be included.
+This process even with $2000 hardware, can take more then 24 hours
+running full blast for just a 30 minute video. This is the main reason
+for FTU's existence, not just to make this technology accessible to the
+computer illiterate, but to reduce computer idle time to zero, in
+between these 3-4 stages.</p><h2>Prerequisites</h2>
+<ol><li class="western">Windows Environment</li><li class="western">Recent NVIDIA Graphics Card</li><li class="western">Significant amount of Storage Space dedicated JUST for FTU (at least 1TB)</li><li class="western">Reasonable CPU</li><li class="western">FFMPEG</li><li class="western">Microsoft Visual C++ 2013</li><li class="western">CUDA Toolkit</li><li class="western">Waifu2x-caffe</li><li class="western">RawTherapee (Optional)<br>
+Optional, Expected File Name: (rawtherapee-cli.exe)</li><li class="western">cuDNN<br>
+Optional NVIDIA library, but practically required to upscale in any
+reasonable time.<br>
+<span style="color: red;">Important to verify if this is
+installed correctly. Use the GUI version of Waifu2x-caffe, and press
+the "Check cuDNN" button to verify if installed correctly</span></li></ol><h2>Installation</h2><ol><li>Install FFMPEG</li><ol><li>Go to the website linked below, and download the build desired</li><li>Extract the files, and place them on your computer, like in /Program Files</li><li>Keep track of the location of <span style="color: rgb(0, 153, 0);">"ffmpeg.exe"</span> and <span style="color: rgb(0, 153, 0);">"ffprobe.exe"</span></li></ol><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Install Microsoft Visual C++ 2013 Packages</span></span></li><ol><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Go to the website linked below, and download the latest version</span></span></li><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Run the Installer</span></span></li></ol><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Install CUDA Toolkit</span></span></li><ol><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Go to the website linked below, and download the latest version</span></span></li><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Follow the instructions of the Installation Guide</span></span></li></ol><li><span style="color: rgb(0, 153, 0);"><span style="color: black;">Install cuDNN</span></span></li><ol><li>Go to the website linked below, and create a NVIDIA developer account.</li><li>With this account, you can now download a version of cuDNN appropriate for your Graphics Card.</li><li>Read the installation guide to know which build is appropriate, and how to Install the program properly<br><span style="color: red;">May
+have to update drivers. Also read extra instructions
+from Waifu2x-caffe Github on how to connect Waifu to cuDNN</span></li><li>If
+everything was installed correctly, you should be able to open the GUI
+version of Waifu, and the "check cuDNN" button should return successful</li></ol><li>Install Waifu2x-caffe</li><ol><li>Go to the website linked below, and download the latest version</li><li>Extract the file, and place them on your computer, like in /Documents<br><span style="color: red;">Potential Issues when installing into protected directories such as Program Files</span></li><li>Keep track of the location of <span style="color: rgb(0, 153, 0);">"waifu2x-caffe-cui.exe"</span></li></ol><li>Optional, Install RawTherapee</li><ol><li>Go to the website linked below, and download the latest version</li><li>Run the installer</li><li>Keep track of the location of <span style="color: rgb(0, 153, 0);">"rawtherapee-cli.exe"</span></li></ol><li>Setup FoxTrotUpscaler</li><ol><li>Download the latest version, or the version compatible with the version of FTUServerBot you intend to connect with.</li><li>Put the jar in its own folder, on a drive with at least 1TB of available space.</li><li>Run the jar</li><li>In the prompts, give FTU the locations of the previous programs you have installed as it asks for them.</li><li>If all the required ones are recognized, FTU will ask for the location of RawTherapee, which you can opt out of.</li><li>FTU
+will now actually start, and you will be greeted to a in program
+version of this document, and a kind of file structure will appear in
+the folder FTU is in.&nbsp;</li><li>Read through the rest of the pages to familiarize yourself with the program.</li></ol></ol><h2>Planning an Upscale</h2><p style="margin-left: 40px;">While its easy to upscale when given a "<span style="text-decoration: underline;">config.txt</span>"
+and "rawTherapee.pp3", creating your custom configuration for a
+specific video type will take some testing. You need to change the
+values in "config.txt" to match the content you plan to upscale, the
+default one is not the best solution. The "config.txt" help section
+will explain everything you need to know the file, and what it does,
+but the only way to find the right config is through testing. The
+Waifu2x-caffe website has recommendations on which settings are
+probably best for certain computers and content types, but the guide is
+not perfect. It is best to create multiple configs, and upscale the
+same video with each of them, and pick which one looks the best. After,
+create derivative configs that have the same quality settings, but have
+different speed settings, to see how far you can reduce the time
+without being unstable, or compromising quality. This will finally get
+you to your custom "config.txt" that will work best for your situation.
+After, if you want to apply color correction on all of your frames, you
+can do so with RawTherapee. You will have to refer to this programs
+documentation on how, but you need to generate a .pp3 file, which will
+contain all the steps to color correct any input image. You can share
+these files with others, and split the workload accordingly. Some
+assistance in working with other computers and people can be found with
+FTUServerBot. You can read its documentation on Github (eventually).
+Now you can make use of FTU, and start upscaling on your own! The rest
+of the documentation will teach, on how to use the program.</p><h2>&nbsp;External Links</h2>
+<ul>
+<li>Project Page: <a href="https://github.com/Christian77777/VideoUpscaler" target="_blank">https://github.com/Christian77777/VideoUpscaler</a></li><li>FFMPEG Main page: <a href="https://ffmpeg.org/" target="_blank">https://ffmpeg.org/</a></li>
+<li>FFMPEG Documentation: <a href="https://ffmpeg.org/ffmpeg-all.html" target="_blank">https://ffmpeg.org/ffmpeg-all.html</a></li>
+<li>Waifu2x-caffe Releases: <a href="https://github.com/lltcggie/waifu2x-caffe/releases" target="_blank">https://github.com/lltcggie/waifu2x-caffe/releases</a></li>
+<li>Waifu2x-caffe Documentation: <a href="https://github.com/lltcggie/waifu2x-caffe" target="_blank">https://github.com/lltcggie/waifu2x-caffe</a></li><li>Microsoft Visual C++ 2013 Download: <a href="https://www.microsoft.com/en-US/download/details.aspx?id=40784">https://www.microsoft.com/en-US/download/details.aspx?id=40784</a></li><li>CUDA Download Page: <a href="http://developer.nvidia.com/cuda-downloads">http://developer.nvidia.com/cuda-downloads</a></li><li>CUDA Installation Guide: <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html">http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html</a></li><li>CUDNN Download Page: <a href="https://developer.nvidia.com/cuDNN" target="_blank">https://developer.nvidia.com/cuDNN</a></li><li>cuDNN Installation Guide: <a href="http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installcuda-windows">http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installcuda-windows</a></li>
+<li>RawTherapee Website: <a href="http://rawtherapee.com/" target="_blank">http://rawtherapee.com/</a></li>
+<li>RawTherapee Releases:<a href="http://rawtherapee.com/downloads" target="_blank">
+http://rawtherapee.com/downloads</a></li>
+<li>Inspiration for Project: <a href="https://foxtrotfanatics.info/">https://foxtrotfanatics.info/</a></li>
+</ul>
+</body></html>

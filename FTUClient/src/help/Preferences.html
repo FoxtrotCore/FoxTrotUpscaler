@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Preferences</title></head>
+<body><h1>Preferences</h1><h2>Overview</h2><p style="margin-left: 40px;">You
+can change how FTU works to an extent, as well as activate some nifty
+features in this tab. This section will go over all of this.</p><h2>Options</h2><h3>Dependency File Paths</h3><p style="margin-left: 40px;">You
+can change the file paths of the 4 dependencies used by
+FoxTrotUpscaler. The window will also show the current path, if you
+need to navigate to the programs. There are buttons to open the
+websites of the required programs, if needed. RawTherapee has a special
+check box, since the program is completely optional, to decide if you
+want to include RawTherapee as part of the upscaling process.</p><h3>Intermediary Image File Format</h3><p style="margin-left: 40px;">You can pick to have the pictures in the 3 frame folders, to either be PNG's or Uncompressed TIFF's.<br>PNG's are smaller compressed files, and are a little slower to upscale with.<br>Uncompressed TIFF's will not compress the image, and are faster in upscaling, but will require more disk space.<br><span style="color: red;">Storage size, must be taken in consideration, as the problem of a couple of bytes can be compounded 30,000 times.</span></p><h3>Shutdown on Process Completion</h3><p style="margin-left: 40px;">FTU
+at the end of a queue, or single process, can shutdown the computer to
+save energy. Shutdown will happen after uploading is completed, so you
+wont have to turn the computer on right away, if everything was
+successful. Otherwise, it can be set to stay on.</p><h3>Overwrite ANY data if Required</h3><p style="margin-left: 40px;">This
+is a safety mechanism in place to prevent the loss of work. It can be
+very easy to accidentally type in the episode number of an episode
+already upscaled, or lose frames in the 3 frame folders. Having this
+enabled will attempt to analyze every expected file name before
+anything starts, so you can decide what to do. This is so you don't come
+back to the computer the next day to find out it only worked for one
+hour and stopped to ask you a question. <span style="color: red;"><br>Overwrite
+Checks are only done when a process is executed, if a file is added
+during execution, they will be overwritten without warning.<br>The
+only files that will be overwritten no matter what this setting says,
+are images in the 3 frame files when doing a NORMAL upscale.</span> The manual upscale script will still check these folders if this mechanism is enabled.</p><h3>FTUServerBot Settings</h3><p style="margin-left: 40px;">This feature has its own section dedicated to it,&nbsp;please refer to that.</p><h3>WebDAV Upload</h3><p style="margin-left: 40px;">This feature has its own section dedicated to it,&nbsp;please refer to that.</p><h2>Engaging Changes</h2><p style="margin-left: 40px;">You
+are free to look and make changes to the Preferences only while FTU is
+idle. Making a change will lock the user in that tab, and
+require&nbsp;Saving the changes, or Reverting them, to leave the
+Preferences tab. You can also reset FTU, which will delete the saved
+data, and close FTU.<br><span style="color: red;">Changes made to settings affect all processes in queue, not just ones queued with the new settings.</span></p></body></html>

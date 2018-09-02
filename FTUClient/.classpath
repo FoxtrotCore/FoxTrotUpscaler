@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/miglayout15-swing.jar" sourcepath="lib/miglayout-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.5-tests.jar" sourcepath="lib/commons-lang3-3.5-test-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.5.jar" sourcepath="lib/commons-lang3-3.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/commons-lang3-3.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-text-1.0-tests.jar" sourcepath="lib/commons-text-1.0-test-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-text-1.0.jar" sourcepath="lib/commons-text-1.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/commons-text-1.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/log4j-api-2.9.0.jar" sourcepath="lib/log4j-api-2.9.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/log4j-api-2.9.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/log4j-core-2.9.0-tests.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-core-2.9.0.jar" sourcepath="lib/log4j-core-2.9.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/log4j-core-2.9.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-core-2.9.0.jar" sourcepath="lib/jackson-core-2.9.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/jackson-core-2.9.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.9.0.jar" sourcepath="lib/jackson-databind-2.9.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/jackson-databind-2.9.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/sardine-5.7.jar" sourcepath="lib/sardine-5.7-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/FoxTrotUpscaler/lib/sardine-5.7-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.8.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-ab-4.4.8.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-nio-4.4.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/fluent-hc-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-cache-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-win-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.6.jar" sourcepath="lib/commons-io-2.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://commons.apache.org/proper/commons-io/javadocs/api-release"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,32 @@
+Language Codes for FFMPEG META DATA https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+English: eng
+French: fre
+Polish: pol
+Spanish: spa
+Italian: ita
+
+Bot Commands
+1. !info = returns about page for the bot, couple specifics regarding the instance settings of the bot
+2. !list clients = returns list of Clients, and working and time connected
+3. !list events = lists semi important events in chronological order from all clients
+4. !list events [id] = lists events from id only
+5. !job [id] returns current or last job of a client
+6. !config [id]
+7. !now [id] What progress is this bot at right now?
+8. 
+
+Data Transfer
+Sends Report Objects to represents Processes or idle time
+Server stores Array of Processes, one at the beginning to establish Client Infomation, but not jobs
+At Execution Start, if single process, send Object with info saying not a queue, so program expects no queue
+If Queue, Program will create and send over all the Reports for each object as queue, and not started yet. Server will accept Reports in different slots of Activity Array to report entire Queue, 
+Single Process: Server will continue to update the single process index, until the program is completed
+Multi Process: Server will update index of the queue file sent, when complete, program will notify server, and server will update new index.
+if Aborted, Program will tell server with Report Object, and The object, or objects ahead of the array will be marked as dead.
+If Quick Scripts, report as one object, report for part 3.
+
+
+Report Object, instance of Process with extra data, and log of events for the Report
+Event log:  List of Errors, Pauses, Completions, etc
+Array of Reports, Entire history of Client activity for server to read
+matrix of Reports: All Data avaliable to the Server

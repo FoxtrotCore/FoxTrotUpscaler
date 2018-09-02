@@ -1,0 +1,33 @@
+[FoxTrotUpscaler Extra Settings]
+Only edit characters after the ">" to change settings
+Expected Filename by FTU is "config.txt"
+Help on what to do is in the Help tab of FTU, or in Japanese at https://github.com/lltcggie/waifu2x-caffe
+
+[Config]
+Waifu2x_Applied_Operations<-m>noise_scale
+Waifu2x_Scale_Height<-h>1080
+Waifu2x_Noise_Level<-n>1
+Waifu2x_Processor_Type<-p>gpu
+Waifu2x_Image_Crop Size<-c>256
+Waifu2x_Image_Output_Data_Output<-d>16
+Waifu2x_Simultaneous_Threads<-b>1
+Waifu2x_Multi_GPU_Selection_<-gpu>0
+Waifu2x_Test_Time_Augmentation<-tta>0
+Waifu2x_Upscale_Model<-y>upconv_7_anime_style_art_rgb
+Import_Video_Framerate<-r>25
+Export_Video_Framerate<-r>25
+FFMPEG_Arguments_for_Deinterlace_Process_Export_Source<>-vf yadif -c:v libx264 -preset slow -crf 19
+FFMPEG_Arguments_for_Stage_A_Input_Source<>
+FFMPEG_Arguments_for_Stage_A_Export<>
+FFMPEG_Arguments_for_Stage_D_Input_Source<>
+FFMPEG_Arguments_for_Stage_D_Export<>-c:v libx264 -preset veryslow -crf 19
+FFMPEG_Arguments_for_Remuxing_Export<>-c copy
+
+[Note of Forced Parameters for purpose of Program]
+Waifu2x_Specific_Model_Folder<--model_dir>default*
+Waifu2x_Output_Folder<-o>MAIN\ProcessedFrames
+Waifu2x_Input_Folder<-i>MAIN\QueuedFrames
+Waifu2x_Auto_Start<--auto_start>1
+Waifu2x_Auto_Exit<--auto_exit>1
+Waifu2x_Dont_Overwrite<--no_overwrite>0
+Waifu2x_Image_Export_Quality<-q>-1

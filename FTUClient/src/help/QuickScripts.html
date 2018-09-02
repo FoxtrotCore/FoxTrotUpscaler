@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head></head>
+<body>
+<h1>QuickScripts - Assisting Functions</h1>
+<h2>Overview</h2>
+<p style="margin-left: 40px;">The Quickscripts tab of
+FoxTrotUpscaler gives 4 scripts that
+should help with a couple different things related to upscaling. Some
+prepare files for the Upscale Setup, while others build on what the
+main function creates. These all are supposed to be somewhat quick
+commands, so <span style="color: rgb(255, 0, 0);">they do
+not get extensively monitored by FTUServer.<br><span style="color: black;">Here is a guide on all the scripts.</span></span></p>
+<h2>De-interlacing Script</h2>
+<h3>Description:</h3>
+<p style="margin-left: 40px;">De-interlaces Video using
+YADIF (yet another De-interlacing
+filter) in FFMPEG.<br>
+The de-interlaced video should appear in ImportVideo labeled correctly,
+ready to be used in Upscale Setup</p>
+<h3>Options:</h3>
+<ol>
+<li>Show Name<br>
+<span style="color: rgb(255, 0, 0);">De-interlacing
+script uses video with a UNIQUE file name of <span style="color: rgb(0, 153, 0); font-style: italic;">"</span></span><span style="color: rgb(0, 153, 0);"><em>Interlaced_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;</em></span><span style="font-style: italic; color: rgb(0, 153, 0);">"</span><span style="color: rgb(255, 0, 0);"></span></li>
+<li><span style="color: rgb(0, 0, 0);">Episode
+Number</span></li>
+</ol>
+<h3>Instructions:</h3>
+<ol>
+<li>Make sure the Interlaced video exists to extract from, in
+ImportVideo</li>
+<li>Fill in values from Options section.</li>
+<li>Execute the Script.</li>
+</ol>
+<h2><span style="color: rgb(0, 0, 0);">Audio
+Extraction Script</span></h2>
+<h3><span style="color: rgb(0, 0, 0);">Description:</span></h3>
+<p style="margin-left: 40px;"><span style="color: rgb(0, 0, 0);">Scans Input
+Video file for all Audio Streams, asks User which is desired, and
+extracts the audio stream as the desired codec. File is then placed in
+/ImportAudio, properly labeled, and ready for use in "Upscaler Setup".<br>
+<span style="color: rgb(255, 0, 0);"><span style="color: rgb(204, 153, 51);">Will in future update add a second Stream Extractor for Subtitles.</span><br>Parameters given are only for re-encoding as "aac" files. Other extensions are not extensively tested.</span></span></p>
+<h3><span style="color: rgb(0, 0, 0);">Options:</span></h3>
+<ol>
+<li><span style="color: rgb(0, 0, 0);">Show Name</span></li>
+<li><span style="color: rgb(0, 0, 0);">Episode
+Number</span></li>
+<li><span style="color: rgb(0, 0, 0);">Export Codec</span></li><li><span style="color: rgb(0, 0, 0);">Codec Parameters (if required)<span style="color: rgb(255, 204, 51);"></span></span><span style="color: rgb(0, 0, 0);"></span></li>
+</ol>
+<h3>Instructions:</h3>
+<ol>
+<li>Make sure Video to extract from exists in ImportVideo</li>
+<li>Fill in values from Options section.</li><ol><li>If you want to just copy the stream, choose the "copy" codec, and ignore the Parameters<br>If you want to re-encode the stream, choose the desired codec, and enter in applicable codec Parameters.</li></ol>
+<li>Execute the Script, by deciding if you want to extract a single
+Audio stream, or extract every possible audio stream in the video.<br><span style="color: red;">Codec/Parameter selection will be applied to all Audio streams, if the "Extract All" method is chosen.</span></li>
+
+<li>If multiple Audio streams are found, and the user desired a single one of them, a prompt will appear
+asking the user which stream to extract. Otherwise it will extract the
+single existing stream, or terminate if no streams found.<br>Select in the prompt which stream to extract, or wait for
+completion.</li>
+</ol>
+<h2>Manual Retouching Script</h2>
+<h3>Description:</h3>
+<div style="margin-left: 40px;">Allows for surgical
+upscaling of a few
+errored/corrupted/missing frames without requiring other burdens from
+using Upscale Setup. Can choose to execute Stage B, C, or B then
+C. This script is expected to be run after running at least Stage A of
+a Process, all the way up until the next Upscale is started. Any errors
+noticed in the upscale during this time, can be corrected with this
+method. Manipulates files in /QueuedFrames /IntermediateFrames and
+/ProcessedFrames, which are shared by Upscale Setup.<br>
+<span style="color: red;">Possible to delete many frames
+if done incorrectly, and Overwrite
+protections are removed in Preferences.</span></div>
+<h3>Options:</h3>
+<ol>
+<li>Stage Selection: This is where you can choose how you want
+to upscale<br>
+Waifu2x (Stage B): /QueuedFrames -&gt; Stage B -&gt;
+/ProcessedFrames<br>
+RawTherapee (Stage C): /IntermediateFrames -&gt; Stage C -&gt;
+/ProcessedFrames<br>
+Waifu2x + RawTherapee (Stage B + C): /QueuedFrames -&gt; Stage B
+-&gt; /IntermediateFrames -&gt; Stage C -&gt;
+/ProcessedFrames</li>
+<li>Abort Process: Use this button to terminate the upscale.</li>
+<li>Time Estimate: Similar to the one in Upscale Setup, will
+give a estimate for how much longer the current STAGE will take.</li>
+</ol>
+<h3>Instructions:</h3>
+<ol>
+<li>Organize the frames in the 3 frame folders, so that one
+frame only exists in the right folder corresponding to the Stages you
+want to run the frame through.<br>
+Here is a detailed explanation for how to do this.</li>
+<ol>
+<li>If you want to run a frame through either just Stage B,
+or both Stage B and C; leave the frame in /QueuedFrames</li>
+<li>If you want to run a frame through just Stage C, leave a
+frame in /IntermediateFrames but make sure to remove it from
+/QueuedFrames</li>
+<li>After this, if a frame exists in /QueuedFrames, delete it
+from the other two folders</li>
+<li>After this, if a frame exists in /IntermediateFrames,
+delete it from /ProcessedFrames</li>
+<li>If you did everything right, then there should only exist
+one version of each frame in one of the folders. If you start the
+script, you should get no Overwrite warning error, and at the end,
+/ProcessedFrames should contain the latest version of every single frame<br>
+<span style="color: red;">If you wish to omit steps
+3-4, you can disable the overwrite protection. This is not recommended.
+If the user makes an error in organizing the frames, you could delete
+more then intended, and waste time re-upscaling them.<br>
+Be careful about deleting frames, if you delete every single version
+of a frame from all 3 folders, attempting to run Stage D will crash
+because of the missing frame.</span></li>
+</ol>
+<li><span style="color: red;"><span style="color: black;">Select the Stages you want to
+re-upscale.</span></span></li>
+<li><span style="color: red;"><span style="color: black;">Execute the Script</span></span></li>
+<li><span style="color: red;"><span style="color: black;">On Completion, /ProcessedFrames should
+contain every frame. The script will label everything correctly and you
+should be able to execute Stage D right after.</span></span><span style="color: red;"><span style="color: black;"><br>
+</span></span></li>
+</ol>
+<h3>Explanation of what happens</h3>
+<div style="margin-left: 40px;">
+This Script can be complicated to setup properly, or
+understand how it
+works. This section aims to explain in more detail what it does, so it
+can be utilized effectively.<span style="color: rgb(255, 204, 51);"><br><span style="color: rgb(204, 153, 51);">
+Looking at you
+Ivo...</span></span></div>
+<span style="color: rgb(255, 204, 51);"></span>
+<div style="margin-left: 40px;">Before the Script starts,
+your 3 frame folders should look something like this.<br>
+<img style="width: 600px; height: 171px;" alt="Failure to load Image" title="Before running Script." src="ManualPic1C.png"><br>
+Each of the squares is a frame file, either png or tif,&nbsp;
+and each column represents the same frame, but different version that
+reached a different stage of upscaling. Lets assume someone in this
+example already deleted frames in the folders, and wants to run both
+Stage B + C. The picture shows that they want to run Frame 1,2,3,4,6,8,
+through Stage B + C, we know this because these frames exist at all in
+/QueuedFrames. It appears that Frame 5 should only be run through Stage
+C, we know this because it exists in /IntermediateFrames but not
+/QueuedFrames. Frame 7 will be left alone, because it only exists in
+/ProcessedFrames. In this example, it shows that the user did not
+delete frames as told in Steps 3-4 of the Instructions above. This is
+not recommended but will be used in this example to show what happens.<br>
+<br>
+Starting the Script, certain frames will be deleted because Overwrite
+Protection was disabled, and then Stage B will execute on every frame
+in /QueuedFrames. It will look like this.<br>
+<img style="width: 600px; height: 171px;" alt="Image failed to load" title="What will happen during Stage B" src="ManualPic2C.png"><br>
+Every Orange arrow is a Frame that will be Upscaled by Stage B, and
+placed into /IntermediateFrames. If the frame already existed in
+/IntermediateFrames it would be overwritten, which hopefully was the
+User's intention. <br>
+<br>
+After Stage B completes, Stage C will begin. It will retouch every
+image in /IntermediateFrames, both new and old, and place them in
+/ProcessedFrames. It will look like this.<br>
+<img style="width: 600px; height: 168px;" alt="Image failed to Load" title="What will happen during Stage C" src="ManualPic3C.png"><br>
+Exact same process as before, except with different input and output
+folders. In this examples, more frames were replaced, that the user
+hopefully reviewed to ensure was acceptable.<br>
+<br>
+When the script completes, your folders should look like this.<br>
+<img style="width: 600px; height: 209px;" alt="Image failed to Load" title="Folders on Script Completion" src="ManualPic4C.png"><br>
+Stage D is only concerned about having all the frames in
+/ProcessedFrames, which is why the gaps are acceptable. In a normal
+upscale, the exact same thing would occur without gaps, since every
+frame in /QueuedFrames would be extracted from a source Video, with the
+rest of the folders being empty. If this is the case, it would be
+better to just run a Normal Upscale starting with Stage B or C, since
+it would immediately start Stage D at the end. That is why this script
+is better for correcting errors, and then starting a normal Upscale on
+Stage D.</div>
+<h2>Re-muxing Script</h2>
+<h3>Description:</h3>
+<p style="margin-left: 40px;">This script will take a
+completed upscale video, extract the video from
+it, and recombine it with the selected Audio/Subtitle Streams and meta
+data desired. You can also cut out a piece of the upscaled video using
+the Duration and Master Offset options. Very helpful to make changes to
+a Video without re-upscaling it, or using an external program.<br>
+<span style="color: red;">Script will make a copy, not
+delete original video, will be labeled </span><span style="color: rgb(0, 153, 0);"><span style="font-style: italic;">"Remuxed_</span><em>&lt;LANG
+### &gt;_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</em></span></p>
+<h3>Options:</h3>
+<div style="margin-left: 40px;">Every single option for
+this Script is copied from Upscale Setup. Refer to that document's "How to Start a Process" section to
+learn about the options.</div>
+<h3>Instructions:</h3><ol><li>Make sure all necessary files are properly labeled and in the correct folders.<br><span style="color: red;">Script expects videos in the /Export folder, and labeled</span> <span style="color: rgb(0, 153, 0); font-style: italic;">"Upscaled_&lt;LANG ###&gt;_&lt;EP ###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li><li>Fill in all the Options as described in Upscale Setup</li><li>Execute the Script</li></ol>
+</body></html>

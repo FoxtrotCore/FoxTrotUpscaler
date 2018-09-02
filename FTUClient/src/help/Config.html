@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head></head>
+<body><h1 class="western" align="left"><span><strong>Config.txt Usage</strong></span></h1>
+<h2><span>Overview</span></h2>
+<p class="western" align="left">When you first run FoxTrotUpscaler, it will generate a file called <u>config.txt</u>
+in the same folder the Jar file is placed in. It has some extra text
+for the user to read, but at its core, its a list of key/value pairs
+that the User MUST edit if they want a good upscale. The default values
+are supplied so that the program will work, and some you may leave
+alone. However, they are all worth looking into, as all the options the
+dependencies provide that do not fit the purpose of FTU are hard-coded
+anyway. They are listed at the bottom of the <u>config.txt</u> in case
+the user wishes to know exactly. If you screw up the syntax, the
+program will delete the old one and create a fresh one with the default
+values, so don&#8217;t screw it up -<span style="color: rgb(255, 0, 0);">Eventually rename instead of delete</span></p>
+<h2><span>Exceptions</span></h2>
+<p class="western" align="left">Almost all of the options require a value, except for </p>
+<ol>
+<li class="western" align="left">Stage A Input Source Arguments (line 20)</li>
+<li class="western" align="left">Stage A Export Arguments (Line 21)</li>
+<li class="western" align="left">Stage D Input Source Arguments (line 22)</li>
+</ol>
+<h2 class="western" align="left"><span>Options</span></h2>
+<p class="western" align="left">The entire list of values required can be organized into 3 parts.</p>
+<ol>
+<li class="western" align="left">Waifu2x-caffe Upscale Parameters</li>
+<li class="western" align="left">Video Frame rates</li>
+<li class="western" align="left">FFMPEG Arguments</li>
+</ol>
+<h3><span>Waifu2x-caffe Upscale Parameters</span></h3>
+<p class="western" align="left">The First set of values are all
+required for Waifu2x (Stage B) to function. The values define how
+Waifu2x upscales the content, as well as the resources available to it.
+You can find an explanation for all of these parameters on the
+developers website: <a class="western" href="https://github.com/lltcggie/waifu2x-caffe"><span><span lang="zxx"><u>https://github.com/lltcggie/waifu2x-caffe</u></span></span></a><span style="color: red;"><br> (Yes, it is in Japanese, but it is understandable with Google Translate)</span></p>
+<p class="western" align="left">The First half of the GitHub page
+should explain what the options do. Some affect how the upscale is
+done, and affect the quality. Other options affect how fast the upscale
+happens, which is dependent on your hardware. The Second half will
+explain
+the syntax for the CUI variant of the software. The command examples
+shown are intended to be entered like &#8220;-tta 0&#8221; into CMD, but that is
+FTU&#8217;s job, you just have to enter &#8220;0&#8221; in line 15 after the &#8220;&gt;&#8221;
+character, to enter the equivalent value.</p>
+<h3><span>Video Frame rates</span></h3>
+<p class="western" align="left">The Next values are the Import and
+Export videos frame rate. Just find the first in VLC, pick the second
+and enter them in. Make sure to double check this value every time you
+change &#8220;TV show&#8221; or whatever. The reason these values are in the text
+file rather then the GUI is that the values are expected to be
+consistent for a "group" of videos. So rather then have you enter it in
+100 times, just change it in the text file when needed.<br><span style="color: red;">It
+is OK, to use multiple versions of a config, in the same queue of
+processes. You do not even have to close FTU to make a change in this
+file.</span></p>
+<h3><span>FFMPEG Arguments</span></h3>
+<p class="western" align="left">The Last set of values are the FFMPEG
+arguments. These are a lot less like multiple choice questions, and
+more like free response. They can be easier to mess up if you are
+unfamiliar with FFMPEG. So I suggest you brush up on the documentation,
+because this can allow you to use the program more effectively. <a class="western" href="https://ffmpeg.org/documentation.html"><span><span lang="zxx"><u>https://ffmpeg.org/documentation.html</u></span></span></a></p>
+<p class="western" align="left">The 6 Arguments all work in the exact
+same way, but apply to different parts of all the Stages that use
+FFMPEG. Each of them provide extra/required FFMPEG arguments of your
+choosing to the mentioned content that it refers to.<br> For example,
+one of the required arguments for &#8220;Stage D Export&#8221; provide a video
+encoder and preset to FFMPEG,. In Stage D, the program is converting
+individual frames into a video, which is why it requires an encoder, as
+it cant just copy the stream.</p>
+<p class="western" align="left">However, you could also append to any
+of the 6 arguments, other flags that FFMPEG would recognize. This can
+allow you to edit the final product an infinite number of ways, without
+needing a second pass though FFMPEG or re-encoding. Otherwise, you can
+put the bare minimum of the required flags, and for the optional
+arguments (the 3 Exceptions above) , leave them blank.</p>
+<p class="western" align="left">Just beware that FTU will not confirm
+any of the content in the Arguments, and assume you at least put the
+required parameters. If it crashes due to User error in the config.txt,
+FFMPEG should tell you what it did not like in the Console Area, so you
+can fix it. <span style="color: red;">Any further help with this should be directed to FFMPEG&#8217;s documentation.</span></p></body></html>

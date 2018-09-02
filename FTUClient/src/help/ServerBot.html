@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>ServerBot</title></head><body><h1>FTUServerBot - Needs a better name, no?</h1><h2>Overview</h2><p style="margin-left: 40px;">FoxTrotUpscaler
+is great on its own, but paired with FTUServerBot, is much more
+accessible. You will not always be in attendance of the client computer
+while it is upscaling, especially since it requires no human
+interaction during an upscale. Babysitting the machine would be boring.
+Remote connections could solve this problem, but asking a computer to
+do that takes away resources from the upscaling, and begins to risk
+affecting the stability of the system. So to solve this problem, A
+separate program called FTUServerBot was created as a server for FTU
+clients to connect to. &nbsp;When a connection is established, the
+client will report all of its activities to the Server, which can
+handle multiple clients. The Server also acts as a Discord bot, where
+multiple users on a discord server can interface with it to request
+data or be notified of events. This section will cover the client side
+of this relationship, the server side documentation will be included
+with FTUServerBot.</p><h2>Setup</h2><ol><li>Obtain the necessary credentials from the server master</li><li>Go to the Preferences tab in FTU</li><li>Press "Link" in the FTUServerBot section</li><li>Enter in a name for this client instance of FTU, enter the host name, enter the port for the server, and press "Verify".</li><li>If verification is successful, The server will establish a link and and the client will report data automatically. The UI will also update its values.<br><span style="color: red;">The server name will be at the bottom of the ServerBot panel, make sure its the server you intended to connect to.</span></li></ol><h2>Usage</h2><p style="margin-left: 40px;">Every
+extra thing FTU does for reporting is intended to be automatic. There
+is nothing else the user can tell the client to do regarding
+FTUServerBot, other then to disconnect. The connection will
+automatically be closed when FTU is closed, and is reestablished when
+the program is restarted. <br><span style="color: red;">Deleting "/Temp/GlobalData.ser" will prevent a connection from being made on program start.</span><br>For understanding what is now possible when linked to a server, please check the server documentation.</p><p style="margin-left: 40px;"><strong><span style="color: red;">In a future update, there will be the possibility of the server sending instructions to clients to upscale remotely. If
+this occurs, there will also be a toggle to prevent the server from
+controlling the client remotely, if the client does not want this
+feature. Users agree to accept any risks associated with remote
+connections from the network, and will not hold developers accountable
+for any damage this may cause</span></strong>.</p></body></html>
