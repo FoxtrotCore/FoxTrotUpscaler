@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>WebDAV</title></head><body><h1>WebDAV Upload</h1><h2>Overview</h2><p style="margin-left: 40px;">Go
+ahead, show off these upscaled videos to the world! That means though
+you need to get them of your computer and on to the Internet. But then
+using a queue could force you to wait a couple days before you
+interrupt your computer from upscaling. This also assumes you catch
+FoxTrotUpscaler just as Stage D finishes, which could be during your
+sleep. For this reason, FTU has the ability to upload to a WebDAV
+server, immediately after Stage D completes. The upscaling will take a
+break for a bit during the upload, but if during a queue, will continue
+right on with the next episode after. This section will go over this
+feature, and how to set it up.</p><h2>Setup</h2><ol><li>Obtain the necessary credentials for the WebDAV server from its master.</li><li>Open FTU, and go to the Preferences tab</li><li>Press "Enable Uploads" in the WebDAV section</li><li>In the pop-up, enter in the the network address of the folder, enter in your credentials, and press "Verify".</li><li>If
+&nbsp;verification is successful, the client will place a text file on
+the folder accessed to prove its connection, and where it plans to
+upload, and the values will be updated.</li></ol><h2>Usage</h2><p style="margin-left: 40px;">You
+wont notice anything different with this enabled until a upscale
+reaches Stage D completion. A dialog box will appear letting the user
+know it is uploading, with the time elapsed. When completed, the dialog
+will close, and the next upscale will begin if in a queue. The
+Overwrite safety check also applies here, and will prevent overwriting
+on the server. It will however, keep the local copy, since the
+overwrite check on Process start, prevented overwriting a local version.<br>A
+failed upload will throw an error, but continue the next video if there
+is a queue.Credentials for WebDAV server are saved, even on restarting
+FTU.</p><p style="margin-left: 40px;"><strong><span style="color: red;">Users agree to accept any risks
+associated with&nbsp;connections to the network, and will not hold
+developers accountable for any damage this may cause</span></strong>.</p></body></html>

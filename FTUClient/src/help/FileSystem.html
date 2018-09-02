@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>FileSystem</title></head>
+<body>
+<h1>File System</h1>
+<h2>Overview</h2>
+<p style="margin-left: 40px;">Starting FTU for the first
+time, will generate a bunch of Folders and a few files. All of the work
+done by FTU will be done in these folders, so you should become
+knowledgeable about them. Some will be more useful then others. This
+section will explain each of them, as well as detail the expected file
+names, for files in the said folders.<br><span style="color: red;">Note,
+if a &lt;&gt; has number signs in them, it signified how many
+chars/digits are required for that section, no more, no less.</span><br>All LANGs refer to a standarized 3 digit ISO 639-2/B language code, see here for the entire list: <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a></p>
+<h2>Commonly Accessed Folders</h2>
+<h3>/Export</h3>
+<p style="margin-left: 40px;">This folder is where all of the completed upscaled videos will
+go.This is also where Videos still in the process of Stage D, or videos
+that were aborted in Stage D are.This is where Re-muxed Videos
+will go on completion.</p>
+<ul>
+<li>Completed Upscales: <span style="color: rgb(0, 153, 0); font-style: italic;">"Upscaled_&lt;LANG
+###&gt;_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li>
+<li>Completed Re-muxes: <span style="color: rgb(0, 153, 0); font-style: italic;">"Remuxed_&lt;LANG
+###&gt;_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li>
+<li>Incomplete/Aborted Videos:<span style="color: rgb(0, 153, 0); font-style: italic;"> "&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li>
+</ul>
+<h3>/ImportVideo</h3>
+<p style="margin-left: 40px;">This folder is where you put
+all of the videos that are to be Upscaled, or videos to be de-interlaced
+before hand.</p>
+<ul>
+<li>Interlaced Videos: <span style="color: rgb(0, 153, 0); font-style: italic;">"Interlaced_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li>
+<li>Input Video: <span style="color: rgb(0, 153, 0); font-style: italic;">"Input_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li>
+</ul><h3>/ImportAudio &amp; /ImportSubtitles</h3><p style="margin-left: 40px;">These
+folders are where you put either all of your subtitles, or audio to be
+muxed together with the export video. The Stream Extraction Script will
+put files here&nbsp;on completion.</p><ul><li>Audio Files: <span style="color: rgb(0, 153, 0); font-style: italic;">"&lt;LANG
+###&gt;_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li><li>Subtitle Files: <span style="color: rgb(0, 153, 0); font-style: italic;">"&lt;LANG
+###&gt;_&lt;EP
+###&gt;_&lt;SHOWNAME&gt;.&lt;EXTENSION&gt;"</span></li></ul><h2>Rarely Accessed Folders</h2><h3>/QueuedFrames &amp; /IntermediateFrames &amp; /ProcessedFrames</h3><p style="margin-left: 40px;">These folders are used by FTU to store all of the frames it is manipulating. <span style="color: red;">You will need to inspect these folders when using the Manual Upscale Script</span><br>Frames derived from Stage A, will go in /QueuedFrames<br>Frames created from Stage B, will go in either /IntermediateFrames if RawTherapee is used, or /ProcessedFrames if not<br>Frames created from Stage C, will go in /ProcessedFrames</p><ul><li>Frames: <span style="color: rgb(0, 153, 0); font-style: italic;">"OEP######.&lt;EXTENSION&gt;"</span></li></ul><h3>/Queue</h3><p style="margin-left: 40px;">This folder is where all of the Upscale Processes are saved to disk. <span style="color: red;">This folder should not be tampered with.</span></p><ul><li>Process Serializations: <span style="color: rgb(0, 153, 0); font-style: italic;">"Q###.ser"</span></li></ul><h3>/Temp</h3><p style="margin-left: 40px;">This
+folder stores logs, and the preferences for FTU. FTU logs its own
+activities in foxtrot.log. Every time the program runs, FTU's log is
+rolled over. These&nbsp;log's are necessary when filing bug reports.
+Please only upload the logs in question, do not upload logs unrelated
+to any issues. foxtrot.log is the latest log, while foxtrot-1.log is
+the second latest, and so on. Another file will be GlobalData.ser,
+which stores all the preferences in FTU. Deleting this will reset FTU
+as if being freshly installed. The last file should be log.txt, which
+is a log used by Stage D. <br><span style="color: red;">None of these files should be deleted, only the logs should be shared with the developer, could hold sensitive information.</span></p><ul><li>FTU logs: <span style="color: rgb(0, 153, 0); font-style: italic;">"foxtrot-#.log"</span></li><li>FTU Saved Data: <span style="color: rgb(0, 153, 0); font-style: italic;">"GlobalData.ser"</span></li><li>FFMPEG log: <span style="color: rgb(0, 153, 0); font-style: italic;">"log.log"</span></li></ul><h2>Individual Files</h2><h3>config.txt</h3><p style="margin-left: 40px;">This text file is so important and essential, it has its own section in the documentation, please refer to that.</p><h3>rawTherapee.pp3</h3><p style="margin-left: 40px;">If
+you want to run Stage C, this file will be necessary, otherwise Stage C
+will be skipped. This file tells RawTherapee exactly what to do with
+each frame, before the frames are compressed together into a video.
+Must be generated by actually opening RawTherapee, and generating a
+.pp3 file in there.</p><h3>running</h3><p style="margin-left: 40px;">Helps
+prevent running multiple instances of FTU from running at the same
+time. Only delete if FTU claims to be running already when it is not.</p>
+</body></html>

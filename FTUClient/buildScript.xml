@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FoxTrotUpscaler.
+
+FoxTrotUpscaler is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FoxTrotUpscaler is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FoxTrotUpscaler.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<project default="create_run_jar" name="Create Runnable Jar for Project FoxTrotUpscaler">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+	<property name="version" value="3.2.5"/>
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/bin"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/FoxTrotUpscaler-${version}.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="main.DRI"/>
+                <attribute name="Class-Path" value="."/>
+				<attribute name="SplashScreen-Image" value="resources/logo.png"/>
+            </manifest>
+            <fileset dir="${dir.buildfile}/bin" erroronmissingdir="true" includes="main/,structures/,resources/,graphical/,help/,**/*log4j2.xml"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/miglayout15-swing.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-lang3-3.5-tests.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-lang3-3.5.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-text-1.0-tests.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-text-1.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/log4j-api-2.9.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/log4j-core-2.9.0-tests.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/log4j-core-2.9.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/jackson-core-2.9.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/jackson-databind-2.9.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/jackson-annotations-2.9.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/sardine-5.7.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-cli-1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpcore-4.4.8.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpcore-ab-4.4.8.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpcore-nio-4.4.8.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-codec-1.9.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-logging-1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/fluent-hc-4.5.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpclient-4.5.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpclient-cache-4.5.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpclient-win-4.5.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/httpmime-4.5.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/jna-4.1.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/jna-platform-4.1.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.buildfile}/lib/commons-io-2.6.jar"/>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Christian Devile
+
+This file is part of FTUServerBot.
+
+FTUServerBot is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+FTUServerBot is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FTUServerBot.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<Configuration strict="true" name="XMLConfig"
+	monitorInterval="5">
+	<Appenders>
+		<Appender type="Console" name="SYSOUT">
+			<PatternLayout
+				pattern="%highlight{[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=White, DEBUG=Cyan, TRACE=Blue}" />
+		</Appender>
+		<RollingFile name="FILE" fileName="${sys:directory}/temp/foxtrot.log"
+			filePattern="${sys:directory}/temp/server-%i.log">
+			<Layout type="PatternLayout" pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c{1} - %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy minSize="1" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+			<Filters>
+				<Filter type="ThresholdFilter" level="INFO" onMatch="NEUTRAL" onMismatch="DENY" />
+			</Filters>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="SYSOUT" />
+			<AppenderRef ref="FILE" />
+		</Root>
+	</Loggers>
+
+</Configuration>
