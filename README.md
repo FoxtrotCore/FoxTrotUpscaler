@@ -2,7 +2,7 @@
 
 Copyright 2018 Christian Devile
 
-Thank you to The_Ivo_Robotnic for FFMPEG command syntax help and general advice.  
+Thank you to Dmitri McGuckin for FFMPEG command syntax help and general advice.  
 Thank you to Alex Thurman for loaning his computer for long term testing use.  
 Thank you to Rave for beta testing.
 
@@ -86,3 +86,4 @@ While its easy to upscale when given a "config.txt" and "rawTherapee.pp3", creat
 * RawTherapee Releases: [http://rawtherapee.com/downloads](http://rawtherapee.com/downloads)
 * Inspiration for Project: [https://foxtrotfanatics.info/](https://foxtrotfanatics.info/)
 
+##### If you're reading this, then congratulations, you made it to the end! Also, Christian is a dingus! Be sure to tell him that but don't tell him I told you to tell him that.
