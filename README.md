@@ -85,5 +85,3 @@ While its easy to upscale when given a "config.txt" and "rawTherapee.pp3", creat
 * RawTherapee Website: [http://rawtherapee.com/](http://rawtherapee.com/)
 * RawTherapee Releases: [http://rawtherapee.com/downloads](http://rawtherapee.com/downloads)
 * Inspiration for Project: [https://foxtrotfanatics.info/](https://foxtrotfanatics.info/)
-
-##### If you're reading this, then congratulations, you made it to the end! Also, Christian is a dingus! Be sure to tell him that but don't tell him I told you to tell him that.
