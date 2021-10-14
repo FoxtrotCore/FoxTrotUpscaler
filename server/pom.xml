@@ -8,7 +8,7 @@
     <description>Server side program to receive updates from a FTU Client and post updates when requested to a configured Discord Server</description>
 	<groupId>com.Christian77777.FTUServerBot</groupId>
 	<artifactId>FTUServerBot</artifactId>
-	<version>3.2.5</version>
+	<version>3.2.6</version>
 
     <!-- Project properties -->
     <properties>
