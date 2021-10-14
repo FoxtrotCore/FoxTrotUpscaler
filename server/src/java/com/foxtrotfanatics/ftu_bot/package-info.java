@@ -20,4 +20,4 @@
  * @author Christian
  *
  */
-package structures;
+package com.foxtrotfanatics.ftu_bot;

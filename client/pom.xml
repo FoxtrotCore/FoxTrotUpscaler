@@ -91,7 +91,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 

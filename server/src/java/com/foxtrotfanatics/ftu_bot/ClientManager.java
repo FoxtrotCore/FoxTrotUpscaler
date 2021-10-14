@@ -17,7 +17,7 @@
  * along with FTUServerBot. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.FTUServerBot.main;
+package com.foxtrotfanatics.ftu_bot;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -33,7 +33,7 @@ import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import structures.Database;
+import com.foxtrotfanatics.ftu_bot.structures.Database;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.handle.obj.ActivityType;
 import sx.blah.discord.handle.obj.IChannel;
@@ -43,7 +43,6 @@ import sx.blah.discord.util.RequestBuffer;
 
 public class ClientManager extends Thread
 {
-
 	private static Logger logger = LogManager.getLogger();
 	private int maxCount;
 	private int port;

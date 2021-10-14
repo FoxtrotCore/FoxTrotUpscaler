@@ -17,7 +17,7 @@
  * along with FTUServerBot. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.FTUServerBot.main;
+package com.foxtrotfanatics.ftu_bot;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,8 +36,8 @@ import com.darichey.discord.CommandRegistry;
 import com.darichey.discord.limiter.ChannelLimiter;
 import com.darichey.discord.limiter.RoleLimiter;
 import com.darichey.discord.limiter.UserLimiter;
-import structures.Database;
-import structures.Report;
+import com.foxtrotfanatics.ftu_bot.structures.Database;
+import com.foxtrotfanatics.ftu_bot.structures.Report;
 import sx.blah.discord.handle.impl.obj.ReactionEmoji;
 import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.handle.obj.IMessage;

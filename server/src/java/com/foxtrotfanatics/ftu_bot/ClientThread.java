@@ -17,7 +17,7 @@
  * along with FTUServerBot. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.FTUServerBot.main;
+package com.foxtrotfanatics.ftu_bot;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -50,9 +50,9 @@ import javax.crypto.ShortBufferException;
 import javax.crypto.spec.GCMParameterSpec;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import structures.Database;
-import structures.ProgramEvent;
-import structures.Report;
+import com.foxtrotfanatics.ftu_bot.structures.Database;
+import com.foxtrotfanatics.ftu_bot.structures.ProgramEvent;
+import com.foxtrotfanatics.ftu_bot.structures.Report;
 
 /**
  * @author Christian
