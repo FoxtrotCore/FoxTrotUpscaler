@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
     <!-- Project Details -->
-    <name>FoxTrotUpscaler Discord Server Bot</name>
-    <description>Server side program to receive updates from a FTU Client and post updates when requested to a configured Discord Server</description>
+    <name>Foxtrot Upscaler</name>
+    <description>The Upscaling client and render manager.</description>
 	<groupId>com.foxtrotfanatics</groupId>
 	<artifactId>ftu</artifactId>
 	<version>3.2.6</version>

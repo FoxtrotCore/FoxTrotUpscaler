@@ -48,9 +48,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.github.sardine.Sardine;
 import com.github.sardine.SardineFactory;
-import com.foxtrotfanatics.ftu.graphical.FileTransferProgressDialog;
-import com.foxtrotfanatics.ftu.graphical.MainWindow;
 import com.foxtrotfanatics.ftu.structures.Report;
+import com.foxtrotfanatics.ftu.graphical.MainWindow;
+import com.foxtrotfanatics.ftu.graphical.FileTransferProgressDialog;
 
 public class Settings implements java.io.Serializable
 {
